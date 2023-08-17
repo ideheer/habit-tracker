@@ -36,14 +36,14 @@ add_pixel_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPHID}"
 
 today = datetime.now()
 
-# add_pixel = {
-#     "date":today.strftime("%Y%m%d"),
-#     "quantity":input("How many commits did you submit today? "),
-# }
-# response = requests.post(url=add_pixel_endpoint, json=add_pixel, headers=headers)
-# print(response.text)
-
-update_graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPHID}"
-
-response = requests.put(url=update_graph_endpoint, json={"timezone":"Brazil/East"}, headers=headers)
+add_pixel = {
+    "date":today.strftime("%Y%m%d"),
+    "quantity":input("How many commits did you submit today? "),
+}
+response = requests.post(url=add_pixel_endpoint, json=add_pixel, headers=headers)
 print(response.text)
+
+# update_graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPHID}"
+#
+# response = requests.put(url=update_graph_endpoint, json={"timezone":"Brazil/East"}, headers=headers)
+# print(response.text)
